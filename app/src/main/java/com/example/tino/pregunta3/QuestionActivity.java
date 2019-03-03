@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.tino.pregunta3.dao.PreguntaDAO;
 import com.example.tino.pregunta3.model.Pregunta;
 
 import java.io.BufferedReader;
@@ -27,14 +28,14 @@ public class QuestionActivity extends AppCompatActivity {
     private TextView tvPregunta;
     private RadioGroup rgRespuestas;
     private ArrayList<RadioButton> respuestas = new ArrayList<RadioButton>();
-    private ArrayList<Pregunta>    preguntas  = new ArrayList<Pregunta>();
     private Random rand;
-    private int    categoria;
-    private String nombreCategoria;
+    private String categoria;
+    PreguntaDAO preguntaDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_question2);
         button = (Button) findViewById(R.id.btnEnviar);
 
@@ -49,57 +50,9 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        categoria = getIntent().getIntExtra("categoria", 0);
-
-        cargarPreguntas(categoria);
+        preguntaDAO = PreguntaDAO.getInstance();
         ordenar();
         mostrarPregunta();
-    }
-
-    private void cargarPreguntas(int categoria){
-        switch (categoria){
-            case 0:
-                preguntas.add(new Pregunta("¿Cuál es la rama mayoritaria del Islam?","Sunismo","Chiísmo",
-                            "Jariyismo","Sufismo"));
-                preguntas.add(new Pregunta(" ¿Cuál es la ciudad más antigua de América Latina?","Caral","La Paz",
-                        "Valparaíso","Arequipa"));
-                preguntas.add(new Pregunta("¿Quién pronunció la frase: \"Bebamos de la copa de la destrucción\"?","Gengis Kan",
-                        "Mussolini","Berlusconi","Margaret Tatcher"));
-                preguntas.add(new Pregunta("El Renacimiento marcó el inicio de la Edad...","Moderna","Antigua clásica",
-                        "Contemporánea","Media"));
-                preguntas.add(new Pregunta("¿Cuántos siglos duró el Siglo de Oro?","Dos","Uno","Tres",
-                        "Medio"));
-
-                nombreCategoria = "Historia";
-                break;
-            case 1:
-                preguntas.add(new Pregunta("¿Cuánto es 4+2?","6","7","5","Uf no sé m3n"));
-                preguntas.add(new Pregunta("¿Cuál de las siguientes enfermedades ataca al higado?","Hepatitis",
-                        "Diabetes","Artrósis","Cifoescoliosis"));
-                preguntas.add(new Pregunta("¿Cómo se consume la sustancia alucinógena natural llamada ayahuasca?","Ingerida",
-                        "Vía tacto","Inyectada","Inhalada"));
-                preguntas.add(new Pregunta(" ¿Cuál es la función principal del instestino grueso?","Absorción de agua",
-                        "Absorción de nutrientes","Digestión mecánica","Digestión química"));
-                preguntas.add(new Pregunta("¿Qué cambio de estado ocurre en la sublimación?","De sólido a gaseoso",
-                        "De sólido a líquido","De líquido a gaseoso","De gaseoso a líquido"));
-
-                nombreCategoria="Ciencia";
-                break;
-            case 2:
-                preguntas.add(new Pregunta("¿Cuántas finales del mundo jugó la Selección Argentina de fútbol?","Cuatro",
-                        "Tres","Seis","Cinco"));
-                preguntas.add(new Pregunta(" ¿Cuántos mangos por lado tiene el futbolín?","Cuatro",
-                        "Dos","Tres","Cinco"));
-                preguntas.add(new Pregunta("¿Qué selección acumula mayor cantidad de expulsados en  mundiales de fútbol?","Argentina",
-                        "Brasil","Italia","Camerún"));
-                preguntas.add(new Pregunta("¿Quién inventó el arte marcial llamado Jeet Kune Do?","Bruce Lee",
-                        "David Carradine","Chuck Norris","Ninguna de las anteriores"));
-                preguntas.add(new Pregunta("¿Cuántos puntos vale un tiro libre encestado en baloncesto?","Uno","Dos",
-                        "Tres","Depende"));
-
-                nombreCategoria="Deporte";
-                break;
-        }
     }
 
     private void ordenar(){
@@ -123,12 +76,20 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void mostrarPregunta() {
+        Pregunta pregunta;
+        ArrayList<Pregunta> preguntas;
 
-        Pregunta pregunta = preguntas.get(rand.nextInt(preguntas.size()));
+        categoria = getIntent().getExtras().getString("categoria", "");
+        preguntas = preguntaDAO.list(categoria, this);
+
+        Log.i("preguntas size ",""+preguntas.size());
+
+        pregunta = preguntas.get(rand.nextInt(preguntas.size()));
+
         tvCategoria   = (TextView)    findViewById(R.id.labelCategoria);
         tvPregunta    = (TextView)    findViewById(R.id.labelPregunta);
 
-        tvCategoria.setText(nombreCategoria);
+        tvCategoria.setText(categoria);
         tvPregunta.setText(pregunta.getPregunta());
 
         respuestas.get(0).setText(pregunta.getrCorrecta());
