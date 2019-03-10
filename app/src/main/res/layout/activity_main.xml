@@ -5,58 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4368a5"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
 
-    <TextView
-        android:id="@+id/labelHistoria"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="220dp"
-        android:background="@drawable/historia"
-        android:paddingTop="25dp"
-        android:text="Historia"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
+    android:textAlignment="center">
+
+    <LinearLayout
+        android:id="@+id/ruleta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGirar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRuleta" />
 
-
-    <TextView
-        android:id="@+id/labelCiencia"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="162dp"
-        android:background="@drawable/image"
-        android:paddingTop="25dp"
-        android:text="Ciencia"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRuleta" />
-
-    <TextView
-        android:id="@+id/labelDeporte"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="28dp"
-        android:background="@drawable/deporte"
-        android:paddingTop="25dp"
-        android:text="Deporte"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/labelHistoria"
-        app:layout_constraintTop_toBottomOf="@+id/txtRuleta" />
 
     <TextView
         android:id="@+id/txtRuleta"
@@ -92,5 +55,10 @@
         android:background="@android:color/black"
         app:layout_constraintTop_toBottomOf="@+id/txtRuleta" />
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/historia"
+        />
 
 </android.support.constraint.ConstraintLayout>

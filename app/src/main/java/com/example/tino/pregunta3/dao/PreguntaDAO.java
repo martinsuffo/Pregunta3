@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.example.tino.pregunta3.config.AdminSQLiteOpenHelper;
-import com.example.tino.pregunta3.config.CargaDatos;
 import com.example.tino.pregunta3.model.Pregunta;
 
 import java.util.ArrayList;

@@ -25,7 +25,7 @@ public class CategoriaDAO {
         if(c.moveToFirst()){
             do {
                 Log.i("dao ", "hmm" + c.getString(0));
-                list.add(new Categoria(c.getString(0).substring(0, 1).toUpperCase() + c.getString(0).substring(1)));
+                list.add(new Categoria(c.getString(0)));
             }while (c.moveToNext());
         }
         return list;

@@ -5,12 +5,18 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.tino.pregunta3.dao.CategoriaDAO;
 import com.example.tino.pregunta3.model.Categoria;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -23,12 +29,17 @@ public class MainActivity extends AppCompatActivity {
     private TextView lbCiencia;
     private TextView lbDeporte;
     CategoriaDAO categoriaDAO;
+    LinearLayout layoutRuleta;
+    Resources res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = (Button) findViewById(R.id.btnGirar);
+        layoutRuleta = (LinearLayout) findViewById(R.id.ruleta);
+
+        insertarCategorias();
 
         button.setOnClickListener( (View v) -> {
                 try {
@@ -40,17 +51,34 @@ public class MainActivity extends AppCompatActivity {
             }
         );
     }
+
+    private void insertarCategorias(){
+        categoriaDAO = CategoriaDAO.getInstance();
+        ArrayList<Categoria> categorias = categoriaDAO.list(this);
+        int imgId;
+        res = getResources();
+
+        for(int i=0; i<categorias.size(); i++) {
+            RelativeLayout categoria = (RelativeLayout) getLayoutInflater().inflate(R.layout.categoria_layout, null);
+            ImageView categoriaImg = (ImageView) categoria.getChildAt(0);
+            TextView  categoriaTxt = (TextView)  categoria.getChildAt(1);
+
+            categoriaImg.setImageResource(res.getIdentifier(categorias.get(i).getNombre(), "drawable", this.getPackageName()));
+            categoriaTxt.setText(categorias.get(i).getNombre().substring(0,1).toUpperCase() + categorias.get(i).getNombre().substring(1));
+
+            layoutRuleta.addView(categoria);
+        }
+
+    }
+
     public void girar() throws InterruptedException {
         button.setOnClickListener((View v)->{});
-
         ArrayList<Categoria> categorias;
         Random r = new Random();
         String categoria;
         int    id;
-        Resources res = getResources();
+        res = getResources();
         TextView  label;
-
-        categoriaDAO = CategoriaDAO.getInstance();
 
         categorias = categoriaDAO.list(this);
 
