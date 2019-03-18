@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4468A6"
-    tools:context=".MainActivity">
+    tools:context="org.msuffo.pregunta3.activities.MainActivity">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +14,7 @@
 
     <TextView
         android:id="@+id/textPreguntatres"
-        android:layout_width="match_parent"
+        android:layout_width= "match_parent"
         android:layout_height="wrap_content"
         android:text="PREGUNTA3"
         android:textAlignment="center"
@@ -22,9 +22,9 @@
 
     <TextView
         android:id="@+id/textVidas"
-        android:layout_width="match_parent"
+        android:layout_width= "match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop=   "75dp"
         android:layout_marginBottom="25dp"
         android:text="Cantidad de vidas:"
         android:textAlignment="center"
@@ -32,35 +32,41 @@
 
     <Button
         android:id="@+id/btnVidas1"
-        android:background="@drawable/button"
-        android:layout_width="match_parent"
+        android:layout_width= "match_parent"
         android:layout_height="45dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginStart= "20dp"
+        android:layout_marginEnd=   "20dp"
+        android:layout_marginTop=   "10dp"
+        android:layout_marginBottom="10dp"
         android:text="2"
         android:textSize="20sp"
+        android:background="@drawable/button"
         android:onClick="elegirVidas"/>
 
     <Button
         android:id="@+id/btnVidas2"
-        android:background="@drawable/button"
-        android:layout_width="match_parent"
+        android:layout_width= "match_parent"
         android:layout_height="45dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginStart= "20dp"
+        android:layout_marginEnd=   "20dp"
+        android:layout_marginTop=   "10dp"
+        android:layout_marginBottom="10dp"
         android:text="3"
         android:textSize="20sp"
+        android:background="@drawable/button"
         android:onClick="elegirVidas"/>
 
     <Button
         android:id="@+id/btnVidas3"
-        android:background="@drawable/button"
-        android:layout_width="match_parent"
+        android:layout_width= "match_parent"
         android:layout_height="45dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginStart= "20dp"
+        android:layout_marginEnd=   "20dp"
+        android:layout_marginTop=   "10dp"
+        android:layout_marginBottom="10dp"
         android:text="4"
         android:textSize="20sp"
+        android:background="@drawable/button"
         android:onClick="elegirVidas"/>
 </LinearLayout>
 </android.support.constraint.ConstraintLayout>

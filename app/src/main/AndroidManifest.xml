@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.tino.pregunta3">
+    package="org.msuffo.pregunta3">
 
     <application
         android:allowBackup="true"
@@ -12,17 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/CustomTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name="org.msuffo.pregunta3.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionActivity" />
-        <activity android:name=".RuletaActivity" />
-        <activity android:name=".Ganaste" />
-        <activity android:name=".Perdiste"/>
+        <activity android:name="org.msuffo.pregunta3.activities.QuestionActivity" />
+        <activity android:name="org.msuffo.pregunta3.activities.RuletaActivity" />
+        <activity android:name="org.msuffo.pregunta3.activities.GanasteActivity" />
+        <activity android:name="org.msuffo.pregunta3.activities.PerdisteActivity"/>
     </application>
-
 </manifest>

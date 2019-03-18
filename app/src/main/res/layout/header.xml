@@ -13,16 +13,16 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width= "wrap_content"
         android:layout_height="wrap_content"
         android:text="Trofeos obtenidos: "
-        android:textColor="#FFFFFF"
         android:textSize="18sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/llTrofeos"
-        android:layout_width="wrap_content"
+        android:layout_width= "wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintStart_toEndOf="@+id/textView"
@@ -30,18 +30,18 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width= "wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00000000"
-        android:text="Vidas:"
-        android:textColor="#FFFFFF"
+        android:text="Vidas: "
         android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="#00000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <LinearLayout
         android:id="@+id/tvVidas"
-        android:layout_width="wrap_content"
+        android:layout_width= "wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:textColor="#FFFFFF"

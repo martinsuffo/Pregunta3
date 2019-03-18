@@ -5,41 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4468A6"
-    tools:context=".RuletaActivity"
+    tools:context="org.msuffo.pregunta3.activities.RuletaActivity"
 
     android:textAlignment="center">
 
     <LinearLayout
         android:id="@+id/ruleta"
-        android:layout_width="match_parent"
+        android:layout_width= "match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnGirar"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf= "@+id/btnGirar"
+        app:layout_constraintEnd_toEndOf=    "parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf=    "parent" />
 
 
     <Button
         android:id="@+id/btnGirar"
-        android:background="@drawable/button"
-        android:layout_width="0dp"
+        android:layout_width= "0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="97dp"
-        app:layout_constraintCircleRadius="30dp"
+        android:layout_marginStart= "60dp"
+        android:layout_marginEnd=   "61dp"
+        android:layout_marginBottom="100dp"
         android:text="Girar"
         android:textSize="20sp"
+        android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircleRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <ImageView
-        android:layout_width="0dp"
+        android:layout_width= "0dp"
         android:layout_height="0dp"
         android:src="@drawable/historia"
         />
