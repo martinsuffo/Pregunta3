@@ -2,8 +2,6 @@ package com.example.tino.pregunta3.config;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-
 import com.example.tino.pregunta3.model.Pregunta;
 
 import java.util.ArrayList;

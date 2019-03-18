@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="80dp"
     android:layout_height="80dp"
->
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:scaleType="fitXY"
-        android:src="@drawable/ciencia"
         />
-
     <TextView
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:paddingTop="25dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="20sp"
         />
-</RelativeLayout>
+
+</LinearLayout>

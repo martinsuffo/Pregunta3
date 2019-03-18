@@ -24,11 +24,25 @@ public class CategoriaDAO {
 
         if(c.moveToFirst()){
             do {
-                Log.i("dao ", "hmm" + c.getString(0));
                 list.add(new Categoria(c.getString(0)));
             }while (c.moveToNext());
         }
         return list;
+    }
+
+    public int count(Context context){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context);
+        SQLiteDatabase db    = admin.getReadableDatabase();
+        ArrayList<Categoria> list;
+        String sql = "select count(*) from sqlite_master where type = \"table\" and name != \"android_metadata\";";
+
+        Cursor c = db.rawQuery(sql, null);
+        c.moveToFirst();
+        int count = c.getInt(0);
+
+        c.close();
+
+        return count;
     }
 
     private CategoriaDAO(){}

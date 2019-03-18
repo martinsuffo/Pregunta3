@@ -30,7 +30,6 @@ public class PreguntaDAO {
         list = new ArrayList<>();
         if(c.moveToFirst()){
             do {
-                Log.i("dao ", "hmm" + c.getString(0));
                 list.add(new Pregunta(c.getString(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4)));
             }while (c.moveToNext());
         }

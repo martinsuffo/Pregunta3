@@ -4,61 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4368a5"
-    tools:context=".MainActivity"
-
-    android:textAlignment="center">
-
-    <LinearLayout
-        android:id="@+id/ruleta"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnGirar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRuleta" />
-
+    android:background="#4468A6"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtRuleta"
+        android:id="@+id/textPreguntatres"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:text="Ruleta"
+        android:text="PREGUNTA3"
         android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="45sp" />
 
+    <TextView
+        android:id="@+id/textVidas"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="25dp"
+        android:text="Cantidad de vidas:"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
     <Button
-        android:id="@+id/btnGirar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="480dp"
-        android:layout_marginEnd="69dp"
-        android:background="#AEB86A"
-        android:text="Girar"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/ruler"
+        android:id="@+id/btnVidas1"
+        android:background="@drawable/button"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@+id/txtRuleta" />
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:text="2"
+        android:textSize="20sp"
+        android:onClick="elegirVidas"/>
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/historia"
-        />
+    <Button
+        android:id="@+id/btnVidas2"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:text="3"
+        android:textSize="20sp"
+        android:onClick="elegirVidas"/>
 
+    <Button
+        android:id="@+id/btnVidas3"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:text="4"
+        android:textSize="20sp"
+        android:onClick="elegirVidas"/>
+</LinearLayout>
 </android.support.constraint.ConstraintLayout>
