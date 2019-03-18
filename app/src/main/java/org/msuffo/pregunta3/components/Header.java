@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.example.tino.pregunta3.R;
+import org.msuffo.pregunta3.R;
 import org.msuffo.pregunta3.dao.CategoriaDAO;
 
 import java.util.ArrayList;
